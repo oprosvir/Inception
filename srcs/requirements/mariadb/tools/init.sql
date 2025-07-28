@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS wordpress_db;
 CREATE USER IF NOT EXISTS 'wp_user'@'%' IDENTIFIED BY 'superpassword';
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wp_user'@'%';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'myrootpass';
 FLUSH PRIVILEGES;

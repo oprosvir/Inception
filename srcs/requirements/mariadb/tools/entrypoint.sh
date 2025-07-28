@@ -7,4 +7,4 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
 fi
 
 echo "Starting MariaDB server..."
-exec mysqld_safe
+exec mysqld --user=mysql
