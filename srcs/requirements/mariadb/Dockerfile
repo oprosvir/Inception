@@ -1,16 +1,14 @@
 FROM debian:bookworm
 
 RUN apt-get update -y && \
-    apt-get install -y mariadb-server && \
+    apt-get install -y mariadb-server gettext-base && \
     apt-get clean && \
-    mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
+    rm -rf /var/lib/apt/lists/* /var/lib/mysql/* && \
+    mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld /var/lib/mysql
 
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY tools/entrypoint.sh /usr/local/bin/entrypoint.sh
-
 COPY tools/init.sql /docker-entrypoint-initdb.d/init.sql
-
-RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY --chmod=755 tools/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 EXPOSE 3306
 
