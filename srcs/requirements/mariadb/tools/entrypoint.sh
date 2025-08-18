@@ -3,7 +3,8 @@ set -e
 
 echo "Preparing runtime directories..."
 mkdir -p /run/mysqld
-chown -R mysql:mysql /run/mysqld
+mkdir -p /var/lib/mysql
+chown -R mysql:mysql /run/mysqld /var/lib/mysql
 
 if [ ! -d "/var/lib/mysql/mysql" ]; then
   echo "Database not initialized. Starting initialization process..."

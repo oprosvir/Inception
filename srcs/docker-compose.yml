@@ -2,6 +2,7 @@ services:
   mariadb:
     build:
       context: ./requirements/mariadb
+    image: mariadb
     container_name: mariadb
     env_file:
       - .env
@@ -13,6 +14,12 @@ services:
 
 volumes:
   mariadb_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/olean/data/mariadb
+      o: bind
 
 networks:
   inception:
+    driver: bridge
