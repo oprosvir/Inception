@@ -14,12 +14,14 @@ services:
 
 volumes:
   mariadb_data:
+    name: mariadb_data
     driver: local
     driver_opts:
       type: none
-      device: /home/olean/data/mariadb
+      device: /home/olean/data/mariadb # change olean to 42 login
       o: bind
 
 networks:
   inception:
+    name: inception
     driver: bridge

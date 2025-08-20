@@ -28,14 +28,15 @@ down:
 
 fclean: down
 	@echo "Full cleanup: containers, images, volumes, networks..."
-# 	rm -f $(ENV_LOCAL_PATH) TODO: Uncomment if you want to remove the local .env file
+	docker-compose -f srcs/docker-compose.yml down --volumes --remove-orphans
 	docker stop $$(docker ps -qa) 2>/dev/null || true
 	docker rm $$(docker ps -qa) 2>/dev/null || true
 	docker rmi -f $$(docker images -qa) 2>/dev/null || true
 	docker volume rm $$(docker volume ls -q) 2>/dev/null || true
 	docker network rm $$(docker network ls -q) 2>/dev/null || true
-	docker-compose -f srcs/docker-compose.yml down --volumes --remove-orphans
-	rm -rf $(WP_VOLUME) $(DB_VOLUME)
+# 	rm -f $(ENV_LOCAL_PATH) TODO: Uncomment if you want to remove the local .env file	
+	sudo chmod -R 777 $(VOLUMES_DIR)
+	sudo rm -rf $(WP_VOLUME) $(DB_VOLUME)
 	@echo "Cleanup completed"
 
 re: fclean up
