@@ -54,3 +54,4 @@ status:
 .PHONY: all up down re fclean status setup
 
 # docker exec -it mariadb bash
+# ps aux

@@ -11,6 +11,21 @@ services:
     networks:
       - inception
     restart: always
+    
+  nginx:
+    build:
+      context: ./requirements/nginx
+    image: nginx
+    container_name: nginx
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - "80:80"
+    networks:
+      - inception
+    restart: always
+    depends_on:
+      - mariadb
 
 volumes:
   mariadb_data:
@@ -19,6 +34,14 @@ volumes:
     driver_opts:
       type: none
       device: /home/olean/data/mariadb # change olean to 42 login
+      o: bind
+  
+  wordpress_data:
+    name: wordpress_data
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/olean/data/wordpress # change to your login
       o: bind
 
 networks:
