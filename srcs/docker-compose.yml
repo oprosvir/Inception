@@ -27,6 +27,21 @@ services:
     depends_on:
       - mariadb
 
+  wordpress:
+    build:
+      context: ./requirements/wordpress
+    image: wordpress
+    container_name: wordpress
+    env_file:
+      - .env 
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - inception
+    restart: always
+    depends_on:
+      - mariadb
+
 volumes:
   mariadb_data:
     name: mariadb_data
