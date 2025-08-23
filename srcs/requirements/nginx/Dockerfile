@@ -1,8 +1,7 @@
 FROM debian:bookworm
 
-# install procps to use ps command
 RUN apt-get update -y && \
-    apt-get install -y nginx procps && \
+    apt-get install -y nginx && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

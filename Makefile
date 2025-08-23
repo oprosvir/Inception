@@ -1,6 +1,7 @@
 ENV_SYSTEM_PATH	= /var/inception/.env
 ENV_LOCAL_PATH	= srcs/.env
-VOLUMES_DIR     = /home/$(USER)/data  # TODO : check user env var on VM
+# TODO : check user env var on VM
+VOLUMES_DIR     = /home/$(USER)/data
 WP_VOLUME       = $(VOLUMES_DIR)/wordpress
 DB_VOLUME       = $(VOLUMES_DIR)/mariadb
 
@@ -53,5 +54,8 @@ status:
 
 .PHONY: all up down re fclean status setup
 
-# docker exec -it mariadb bash
+# To access the container for debugging:
+# docker exec -it resume bin/bash
+# apt-get update
+# apt-get install procps
 # ps aux
