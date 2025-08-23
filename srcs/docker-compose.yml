@@ -48,7 +48,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/olean/data/mariadb # change olean to 42 login
+      device: /home/${LOGIN}/data/mariadb
       o: bind
   
   wordpress_data:
@@ -56,7 +56,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/olean/data/wordpress # change to your login
+      device: /home/${LOGIN}/data/wordpress
       o: bind
 
 networks:

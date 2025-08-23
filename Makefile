@@ -1,6 +1,6 @@
 ENV_SYSTEM_PATH	= /var/inception/.env
 ENV_LOCAL_PATH	= srcs/.env
-VOLUMES_DIR     = /home/$(USER)/data
+VOLUMES_DIR     = /home/$(USER)/data  # TODO : check user env var on VM
 WP_VOLUME       = $(VOLUMES_DIR)/wordpress
 DB_VOLUME       = $(VOLUMES_DIR)/mariadb
 
