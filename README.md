@@ -4,7 +4,11 @@ FINAL GRADE: ---/100
 ```
 ## 📖 Overview
 
-**Inception** implements a Dockerized **LEMP stack** (Linux, NGINX, MariaDB, PHP‑FPM) with WordPress as the main application. Each service runs in its own container, connected through a dedicated Docker network, with persistent volumes for data. Optional bonus services extend the stack with tools for database management, caching and file transfer. 
+**Inception** implements a Dockerized **LEMP stack** (Linux, NGINX, MariaDB, PHP‑FPM) with WordPress as the main application. Each service runs in its own container, connected through a dedicated Docker network, with persistent volumes for data. Optional bonus services extend the stack with tools for database management, caching and file transfer.
+
+<p align="center">
+  <img src="assets/lemp_stack.png" alt="LEMP stack" />
+</p>
 
 *This project was developed and tested on **Manjaro (Arch Linux) with the Xfce desktop environment**. It is compatible with Linux-based virtual machines and WSL environments.*
 
