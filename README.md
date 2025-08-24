@@ -28,7 +28,7 @@ All containers are based on **Debian Bookworm**, the penultimate stable release 
 - **Redis** – caching layer to optimize WordPress performance
 - **FTP server** – for direct access to WordPress volume
 - ✅**Static website** – a lightweight personal webpage served through Python’s built-in HTTP server
-- **Custom service** – personal choice with Dockerfile and integration
+- ✅**Portainer** *(custom service)* – Docker management interface with real-time container, image, and volume monitoring
 
 ## 📂 Project Structure
 
@@ -50,12 +50,17 @@ Inception/
 ## 📦 Usage
 
 ```bash
-# Build and run all containers
+# Clone the repository
 git clone https://github.com/oprosvir/Inception.git
 cd Inception
+
+# Build and run all containers
 make
 
-# Stop and remove everything
+# Stop and remove containers (preserving volumes and images)
+make down
+
+# Full cleanup: containers, volumes, images, networks
 make fclean
 ```
 
