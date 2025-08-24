@@ -54,7 +54,9 @@ status:
 
 .PHONY: all up down re fclean status setup
 
-# To access the container for debugging:
+# To access containers use Portainer on http://localhost:9000
+# or the command below to access via terminal:
+
 # docker exec -it resume bin/bash
 # apt-get update
 # apt-get install procps
