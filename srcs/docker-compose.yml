@@ -33,7 +33,7 @@ services:
     image: nginx
     container_name: nginx
     volumes:
-      - wordpress_data:/var/www/html
+      - wordpress_data:/var/www/html:ro
     ports:
       - "127.0.0.1:80:80"
     networks:

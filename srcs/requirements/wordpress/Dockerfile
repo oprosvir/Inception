@@ -5,7 +5,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-CMD ["php-fpm8.2", "-F"]
+COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
-# apt-cache policy php-fpm to check compatible version
-# php-fpm8.2 for debian bookworm
+# phpinfo() page to test PHP processing
+COPY tools/index.php /var/www/html/index.php
+
+EXPOSE 9000
+
+CMD ["php-fpm8.2", "-F"]
