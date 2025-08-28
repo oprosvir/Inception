@@ -2,9 +2,7 @@ FROM debian:bookworm
 
 RUN apt-get update && \
     apt-get install -y \
-    php-fpm \
-    php-gd \
-    php-mysql \
+    php-fpm php-gd php-mysql \
     mariadb-client \
     curl && \
     apt-get clean && \
@@ -15,9 +13,6 @@ RUN curl -sSLo /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds
 
 COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY --chmod=755 tools/wordpress-setup.sh /usr/local/bin/wordpress-setup.sh
-
-# phpinfo() page to test PHP processing
-# COPY tools/index.php /var/www/html/index.php
 
 EXPOSE 9000
 
