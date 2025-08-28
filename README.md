@@ -69,6 +69,7 @@ The site will be available at:
 ```
 https://oprosvir.42.fr
 ```
+⚠️ The `oprosvir.42.fr` domain must be added to `/etc/hosts` to resolve locally (e.g., `127.0.0.1 oprosvir.42.fr`).
 
 ---
 
