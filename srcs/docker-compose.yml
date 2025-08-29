@@ -82,6 +82,16 @@ services:
     networks:
       - inception
     restart: always
+
+# BONUS: Redis cache for WordPress
+  redis:
+    build:
+      context: ./requirements/bonus/redis
+    image: redis
+    container_name: redis
+    networks:
+      - inception
+    restart: always
     
 volumes:
   mariadb_data:

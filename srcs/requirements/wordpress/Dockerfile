@@ -2,7 +2,7 @@ FROM debian:bookworm
 
 RUN apt-get update && \
     apt-get install -y \
-    php-fpm php-gd php-mysql \
+    php-fpm php-mysql php-gd php-redis \
     mariadb-client \
     curl && \
     apt-get clean && \

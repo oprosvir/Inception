@@ -48,6 +48,20 @@ if [ ! -f wp-config.php ]; then
     # delete default plugins and themes
     wp plugin delete akismet hello --allow-root
 
+    # BONUS: Install and configure Redis cache
+    echo "Installing and configuring Redis cache..."
+    wp plugin install redis-cache --activate --allow-root
+    
+    # set Redis configuration in wp-config.php
+    wp config set WP_REDIS_HOST redis --allow-root
+    wp config set WP_REDIS_PORT 6379 --raw --allow-root
+    wp config set WP_CACHE true --raw --allow-root
+    
+    # enable Redis object cache
+    wp redis enable --allow-root
+    
+    echo "Redis cache configured and enabled!"
+
     # set permalink structure to "Post name"
     wp rewrite structure '/%postname%/' --hard --allow-root
     wp rewrite flush --hard --allow-root
