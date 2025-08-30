@@ -59,12 +59,7 @@ if [ ! -f wp-config.php ]; then
     
     # enable Redis object cache
     wp redis enable --allow-root
-    
     echo "Redis cache configured and enabled!"
-
-    # set permalink structure to "Post name"
-    wp rewrite structure '/%postname%/' --hard --allow-root
-    wp rewrite flush --hard --allow-root
 
     # set the correct ownership and permissions
     chown -R www-data:www-data /var/www/html
