@@ -12,4 +12,4 @@ COPY --chmod=755 tools/mariadb-setup.sh /mariadb-setup.sh
 EXPOSE 3306
 
 ENTRYPOINT ["/mariadb-setup.sh"]
-CMD ["mysqld"]
+CMD ["mariadbd"]
