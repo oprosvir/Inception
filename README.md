@@ -1,6 +1,6 @@
 # Inception
 ```
-FINAL GRADE: ---/100
+FINAL GRADE: 125/100
 ```
 ## 📖 Overview
 
@@ -25,8 +25,8 @@ All containers are based on **Debian Bookworm**, the penultimate stable release 
 ### ✨ Bonus Services
 
 - ✅**Adminer** – web UI for managing the MariaDB database
-- **Redis** – caching layer to optimize WordPress performance
-- **FTP server** – for direct access to WordPress volume
+- ✅**Redis** – caching layer to optimize WordPress performance
+- ✅**FTP server** – for direct access to WordPress volume
 - ✅**Static website** – a lightweight personal webpage served through Python’s built-in HTTP server
 - ✅**Portainer** *(custom service)* – Docker management interface with real-time container, image, and volume monitoring
 
